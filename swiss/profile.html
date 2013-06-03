@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/font-awesome.css">
+        <!--[if lt IE 9]>
+            <script src="js/html5-3.6-respond-1.1.0.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <i class="icon icon-reorder"></i> Menu
+                    </a>
+                    <a class="brand" href="index.html">Swiss Admin</a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <li class="active"><a href="#">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
+            <div class="sub-navbar">
+                <div class="container">
+                    <p><i class="icon icon-user"></i> Hello, Username. Thanks for loging in.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container wrapper">
+            <div class="row">
+                <div class="span3">
+                    <ul class="nav nav-tabs nav-stacked">
+                        <li><a href="index.html"><img src="assets/logo.png" alt="logo"/></a></li>
+                        <li><a href="index.html"><i class="icon icon-home"></i> Dashboard</a></li>
+                        <li class="active">
+                            <a href="profile.html" rel="toggle[profile-submenu]"><i class="icon icon-user"></i> Profile <i class="icon icon-caret-down"></i></a>
+                            <div class="dropdown" id="profile-submenu">
+                                <ul>
+                                    <li class="active-submenu"><a href="profile.html"><i class="icon icon-caret-right"></i> View Profile</a></li>
+                                    <li><a href="edit-profile.html"><i class="icon icon-caret-right"></i> Edit Your Profile</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" rel="toggle[messages-submenu]"><span class="badge badge-important pull-right">3</span><i class="icon icon-envelope"></i> Messages <i class="icon icon-caret-down"></i></a>
+                            <div class="dropdown" id="messages-submenu">
+                                <ul>
+                                    <li><a href="messages-feed.html"><i class="icon icon-caret-right"></i>Feed <span class="badge badge-important pull-right">3 New Messages</span></a></li>
+                                    <li><a href="message.html"><i class="icon icon-caret-right"></i> Read</a></li>
+                                    <li><a href="compose-message.html"><i class="icon icon-caret-right"></i> Compose</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="gallery.html"><i class="icon icon-picture"></i> Gallery</a></li>
+                        <li>
+                            <a href="#" rel="toggle[billing-submenu]"><i class="icon icon-credit-card"></i> Billing <i class="icon icon-caret-down"></i></a>
+                            <div class="dropdown" id="billing-submenu">
+                                <ul>
+                                    <li><a href="invoices.html"><i class="icon icon-caret-right"></i> Invoices</a></li>
+                                    <li><a href="purchases.html"><i class="icon icon-caret-right"></i> Purchases</a></li>
+                                    <li><a href="billing.html"><i class="icon icon-caret-right"></i> Billing Info</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" rel="toggle[support-submenu]"><i class="icon icon-beaker"></i> Support<i class="icon icon-caret-down"></i></a>
+                            <div class="dropdown" id="support-submenu">
+                                <ul>
+                                    <li><a href="wiki.html"><i class="icon icon-caret-right"></i> Knowledge Base (Wiki)</a></li>
+                                    <li><a href="article.html"><i class="icon icon-caret-right"></i> Featured Article</a></li>
+                                    <li><a href="submit-ticket.html"><i class="icon icon-caret-right"></i> Submit Support Ticket</a></li>
+                                    <li><a href="view-tickets.html"><i class="icon icon-caret-right"></i> View Your Tickets</a></li>
+                                </ul>
+                            </div>       
+                        </li>
+                        <li><a href="login.html"><i class="icon icon-signout"></i> Log out</a></li>
+                    </ul>
+                </div><!--/span-->
+
+                <div class="span9 content">
+
+                    <div class="banner">
+                        <h2>User Profile</h2>
+                        <p>There are some good news for you today to find out.</p>
+                    </div>
+
+                    <h3>Cooper Black Profile:</h3>
+
+                    <div class="row-fluid">
+                        <div class="span2">
+                            <img class="avatar" src="assets/user-avatar-big.png" alt="user"><br>
+                        </div>
+                        <div class="span4">
+                            <div class="well">
+                                <strong>Name:</strong> Cooper Black<br>
+                                <strong>Location:</strong> London, England<br>
+                                <strong>Status:</strong> Premuim Member<br>
+                            </div>
+                        </div>
+                        <div class="span6">
+                            <p>Don't like what you see?</p>
+                            <p><a class="btn btn-success" href="edit-profile.html">Edit Your Profile Here</a></p>
+                            <p>Reputation: <i class="icon icon-star"></i> <i class="icon icon-star"></i> <i class="icon icon-star"></i> <i class="icon icon-star"></i> <i class="icon icon-star-empty"></i></p>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <p>
+                        <strong>Brief Bio:</strong><br> 
+                        Hello. My name is Black Cooper, and I’m a designer. On top of that, I’m a front end developer, a student at Nottingham Trent University, a type enthusiast, thinker and tinkerer, and beer lover. I say a lot of things on twitter. I show off my design work on dribbble. You can subscribe to my updates on Facebook, take a look at my photos on Flickr, and endorse me on Zerply. I also write a lot of code and put it on Github. That’s enough about me. We should talk.
+                    </p>
+                        
+                    <hr>
+
+                    <h3>Also found on:</h3>
+                    <ul class="unstyled">
+                        <li><i class="icon icon-twitter-sign"></i> <a href="#">@cooperblack</a></li>
+                        <li><i class="icon icon-facebook-sign"></i> <a href="#">cooperblack</a></li>
+                        <li><i class="icon icon-google-plus-sign"></i> <a href="#">cooperblack</a></li>
+                        <li><i class="icon icon-globe"></i> <a href="#">www.venture.com</a></li>
+                    </ul>
+
+                    <h3>User Documents:</h3>
+        
+                    <div class="row-fluid">
+                        <ul class="thumbnails">
+                            <li class="span3">
+                                <a href="#" class="thumbnail">
+                                    <img src="assets/item-1.png" alt="">
+                                </a>
+                            </li>
+                            <li class="span3">
+                                <a href="#" class="thumbnail">
+                                    <img src="assets/item-2.png" alt="">
+                                </a>
+                            </li>
+                            <li class="span3">
+                                <a href="#" class="thumbnail">
+                                    <img src="assets/item-3.png" alt="">
+                                </a>
+                            </li>
+                            <li class="span3">
+                                <a href="#" class="thumbnail">
+                                    <img src="assets/item-2.png" alt="">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <h3>Leave a private message for this user:</h3>
+
+                    <form class="form">
+                        <label for="name">Your name: (you are logged in as)</label>
+                        <input class="span4" type="text" id="name" placeholder="Calisto MT" disabled>
+                        
+                        <label for="inputEmail">Email: (your are logged in as)</label>
+                        <input class="span4" type="text" id="inputEmail" placeholder="calistomt@serif.com" disabled>
+                        
+                        <label for="message">Your message:</label>
+                        <textarea class="span4" rows="4" id="message" placeholder=""></textarea>
+                        
+                        <label class="checkbox">
+                            <input type="checkbox"> Send me a copy
+                        </label>
+                        <button type="submit" class="btn btn-success">Alright sparky, send it.</button>
+                    </form>
+
+                    <h3>Upgrade your Plan:</h3>
+                    
+                    <div class="row-fluid marketing">
+                        <div class="span3">
+                            <a href="#"><img src="assets/mini-banner-1.png" alt="ad"/></a>
+                        </div>
+                        <div class="span3">
+                            <a href="#"><img src="assets/mini-banner-2.png" alt="ad"/></a>
+                        </div>
+                        <div class="span3">
+                            <a href="#"><img src="assets/mini-banner-3.png" alt="ad"/></a>
+                        </div>
+                        <div class="span3">
+                            <a href="#"><img src="assets/mini-banner-4.png" alt="ad"/></a>
+                        </div>
+                    </div>
+                    
+                </div><!--/span9-->
+            </div><!--/row-->
+            
+            <hr>
+
+            <footer>
+                <p>&copy; Company 2012</p>
+            </footer>
+            
+        </div> <!-- /container -->
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/jquery-1.8.0.min.js"><\/script>')</script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/animatedcollapse.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>

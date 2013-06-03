@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/font-awesome.css">
+        <!--[if lt IE 9]>
+            <script src="js/html5-3.6-respond-1.1.0.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <i class="icon icon-reorder"></i> Menu
+                    </a>
+                    <a class="brand" href="index.html">Swiss Admin</a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <li class="active"><a href="#">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
+            <div class="sub-navbar">
+                <div class="container">
+                    <p><i class="icon icon-user"></i> Hello, Username. Thanks for loging in.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container wrapper">
+            <div class="row">
+                <div class="span3">
+                    <ul class="nav nav-tabs nav-stacked">
+                        <li><a href="index.html"><img src="assets/logo.png" alt="logo"/></a></li>
+                        <li><a href="index.html"><i class="icon icon-home"></i> Dashboard</a></li>
+                        <li>
+                            <a href="profile.html" rel="toggle[profile-submenu]"><i class="icon icon-user"></i> Profile <i class="icon icon-caret-down"></i></a>
+                            <div class="dropdown" id="profile-submenu">
+                                <ul>
+                                    <li><a href="profile.html"><i class="icon icon-caret-right"></i> View Profile</a></li>
+                                    <li><a href="edit-profile.html"><i class="icon icon-caret-right"></i> Edit Your Profile</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" rel="toggle[messages-submenu]"><span class="badge badge-important pull-right">3</span><i class="icon icon-envelope"></i> Messages <i class="icon icon-caret-down"></i></a>
+                            <div class="dropdown" id="messages-submenu">
+                                <ul>
+                                    <li><a href="messages-feed.html"><i class="icon icon-caret-right"></i>Feed <span class="badge badge-important pull-right">3 New Messages</span></a></li>
+                                    <li><a href="message.html"><i class="icon icon-caret-right"></i> Read</a></li>
+                                    <li><a href="compose-message.html"><i class="icon icon-caret-right"></i> Compose</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="gallery.html"><i class="icon icon-picture"></i> Gallery</a></li>
+                        <li>
+                            <a href="#" rel="toggle[billing-submenu]"><i class="icon icon-credit-card"></i> Billing <i class="icon icon-caret-down"></i></a>
+                            <div class="dropdown" id="billing-submenu">
+                                <ul>
+                                    <li><a href="invoices.html"><i class="icon icon-caret-right"></i> Invoices</a></li>
+                                    <li><a href="purchases.html"><i class="icon icon-caret-right"></i> Purchases</a></li>
+                                    <li><a href="billing.html"><i class="icon icon-caret-right"></i> Billing Info</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="active">
+                            <a href="#" rel="toggle[support-submenu]"><i class="icon icon-beaker"></i> Support<i class="icon icon-caret-down"></i></a>
+                            <div class="dropdown" id="support-submenu">
+                                <ul>
+                                    <li class="active-submenu"><a href="wiki.html"><i class="icon icon-caret-right"></i> Knowledge Base (Wiki)</a></li>
+                                    <li><a href="article.html"><i class="icon icon-caret-right"></i> Featured Article</a></li>
+                                    <li><a href="submit-ticket.html"><i class="icon icon-caret-right"></i> Submit Support Ticket</a></li>
+                                    <li><a href="view-tickets.html"><i class="icon icon-caret-right"></i> View Your Tickets</a></li>
+                                </ul>
+                            </div>       
+                        </li>
+                        <li><a href="login.html"><i class="icon icon-signout"></i> Log out</a></li>
+                    </ul>
+                </div><!--/span-->
+
+                <div class="span9 content">
+                
+                    <div class="banner">
+                        <h2>Knowledge Base</h2>
+                        <p>There are some good news for you today to find out.</p>
+                    </div>
+
+                    <h3>Search by keyword:</h3>
+
+                    <div class="well">
+                        <div class="row-fluid">
+                            <div class="span6">
+                                <form class="form-inline">
+                                    <div class="wiki-search">
+                                        <input type="search" placeholder="Type a keyword">
+                                        <button type="submit" class="btn btn-success"><i class="icon icon-search"></i> Search</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="span6">
+                                <strong>Search Tip:</strong><br>
+                                Keep it simple! Start by typing the name of a product, service, or concept that you're looking for.
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Search by subject:</h3>
+                    
+                    <div class="well">
+                        <div class="row-fluid display">
+                            <div class="span4">
+                                <ul class="unstyled">
+                                    <li><strong>Technical Subjects</strong></li>
+                                    <li><i class="icon icon-table"></i> <a href="article.html">Datebases</a></li>
+                                    <li><i class="icon icon-envelope"></i> <a href="article.html">Email</a></li>
+                                    <li><i class="icon icon-inbox"></i> <a href="article.html">FTP</a></li>
+                                    <li><i class="icon icon-list-alt"></i> <a href="article.html">PHP</a></li>
+                                    <li><i class="icon icon-shopping-cart"></i> <a href="article.html">Reseller</a></li>
+                                </ul>
+                            </div>
+                            <div class="span4">
+                                <ul class="unstyled">
+                                    <li><strong>General Questions</strong></li>
+                                    <li><i class="icon icon-bullhorn"></i> <a href="article.html">Report Abuse</a></li>
+                                    <li><i class="icon icon-credit-card"></i> <a href="article.html">Billing</a></li>
+                                    <li><i class="icon icon-user"></i> <a href="article.html">Client Area</a></li>
+                                    <li><i class="icon icon-list"></i> <a href="article.html">Other</a></li>
+                                    <li><i class="icon icon-comments"></i> <a href="article.html">Sales Questions</a></li>
+                                </ul>
+                            </div>
+                            <div class="span4">
+                                <ul class="unstyled">
+                                    <li><strong>Servers</strong></li>
+                                    <li><i class="icon icon-credit-card"></i> <a href="article.html">Billing</a></li>
+                                    <li><i class="icon icon-comments"></i> <a href="article.html">General Questions</a></li>
+                                    <li><i class="icon icon-list"></i> <a href="article.html">Subcription Process</a></li>
+                                    <li><i class="icon icon-cog"></i> <a href="article.html">Technical</a></li>
+                                    <li><i class="icon icon-list"></i> <a href="article.html">Other</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Featured Articles:</h3>
+
+                    <ol>
+                        <li><a href="article.html"><strong>Can I recieve eleven2 emails on more than one email address?</strong></a></li>
+                        <li><a href="article.html"><strong>Do you provide Mailing lists feature for your accounts?</strong></a></li>
+                        <li><a href="article.html"><strong>How do I dump the table structure for my MySQL Database, but none of the data?</strong></a></li>
+                        <li><a href="article.html"><strong>How do I import a database (Command Line)?</strong></a></li>
+                        <li><a href="article.html"><strong>How can I view my current disk usage?</strong></a></li>
+                        <li><a href="article.html"><strong>Do you accept checks, money orders, or wire transfers?</strong></a></li>
+                        <li><a href="article.html"><strong>When will my account be suspended if I am past due?</strong></a></li>
+                    </ol>
+                    
+                    <h3>Upgrade your Plan:</h3>
+                    
+                    <div class="row-fluid marketing">
+                        <div class="span3">
+                            <a href="#"><img src="assets/mini-banner-1.png" alt="ad"/></a>
+                        </div>
+                        <div class="span3">
+                            <a href="#"><img src="assets/mini-banner-2.png" alt="ad"/></a>
+                        </div>
+                        <div class="span3">
+                            <a href="#"><img src="assets/mini-banner-3.png" alt="ad"/></a>
+                        </div>
+                        <div class="span3">
+                            <a href="#"><img src="assets/mini-banner-4.png" alt="ad"/></a>
+                        </div>
+                    </div>
+                    
+                </div><!--/span9-->
+            </div><!--/row-->
+            
+            <hr>
+
+            <footer>
+                <p>&copy; Company 2012</p>
+            </footer>
+
+        </div> <!-- /container -->
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/jquery-1.8.0.min.js"><\/script>')</script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/animatedcollapse.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>
