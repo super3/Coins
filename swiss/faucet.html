@@ -57,7 +57,7 @@
                     <ul class="nav nav-tabs nav-stacked">
                         <li><a href="index.html"><img src="assets/logo.png" alt="logo"/></a></li>
                         <li><a href="index.html">A <b>faucet</b> is a website that will give you free Bitcoin or other Digital Currencies to help get you started.</a></li>
-                        <li><a href="faucet.html"><span class="badge badge-success pull-right">Running</span><i class="icon icon-tint"></i> Bitcoin</a></li>
+                        <li class="active"><a href="#"><span class="badge badge-success pull-right">Running</span><i class="icon icon-tint"></i> Bitcoin</a></li>
                         <li><a href="http://trcfaucet.com"><span class="badge badge-success pull-right">Running</span><i class="icon icon-tint"></i> Terracoin</a></li>
                         <!--<li><a href="#"><span class="badge badge-warning pull-right">Coming Soon</span><i class="icon icon-tint"></i> Elacoin</a></li>-->
                     </ul><!--/nav-stacked menu-->
@@ -65,47 +65,25 @@
 
 
                 <div class="span9 content">
-                      <div class="banner" style="text-align:center;">
-                        <h2>Bitcoin Microtransactions Made Possible.</h2>
-                        <p>Due to technical limitations the main Bitcoin client will no longer <a href="https://github.com/bitcoin/bitcoin/pull/2577">
-                           allow transactions under 0.0000543 BTC</a>. MilliB will temporary store your Bitcoins, and then send them to your wallet
-                           automatically once you reach a certain balance.
-                        </p>
-                        <div style="height: 40px;">
-                         <a class="btn btn-large btn-success pull-left" href="api.html">Check out Our API</a>
-                        <a class="btn btn-large pull-right" href="message.html">What is Bitcoin?</a>
-                         </div>  
+                      <div class="banner">
+                        <h2>The Free Lunch Now Exists.</h2>
+                        <p>We really want people to try out our service, so we are giving out some free Bitcoin. We currently pay out 1 µBTC to new addresses, 
+                           and then you can make unlimited requests for 1 satoshi each. <a href="https://en.bitcoin.it/wiki/Units">See Bitcoin Units.</a>
                     </div>
-                     <h3>Check your Balance or Get Free Bitcoin:</h3>
+                    
+                     <h3>Get Free Bitcoin:</h3>
                     <form  style="text-align:center;">
                       <div class="input-append">
                          <input type="text" class="span5  btn-large" placeholder="Bitcoin Address..." style="padding: 11px 19px;font-size: 17.5px;">
-                           <button type="submit" class="btn btn-large">
-                              <i class="icon-search"></i>
-                              Check Balance
-                          </button>
-                           <button type="submit" class="btn btn-large btn-warning">
-                              Free Bitcoin
+                           <button type="submit" class="btn btn-large btn-success">
+                              Give me Free Bitcoin!
                           </button>
                        </div>
                     </form>
-                    <h3>About MilliB:</h3>
-                    <p>
-                    The MilliB service is currently available to Bitcoin related websites that require microtransations. These include faucets, microtasks, pay-to-click,
-                    and other websites. We are committed to providing a solution to these websites, so they are not affected by the microtransaction change. <b>Users
-                    are free to check their balance.</b> We will provide tools to facilitate microtransactions in the future for everyone. </p>
-                     <h3>MilliB API:</h3>
-                     <p>
-                        We want to make MilliB integration into your website as painless as possible. All you need is a simple one line GET request. <br/>
-                        </p>
-                       
-                      <pre>http://api.millib.com/v1/[secret api key]/send/[bitcoin address]/[amount]</pre>
-                       <p>
-                       This will send the specified amount to the Bitcoin address out of your MilliB wallet. You can read the <a href="#">full documentation here</a>.
-                     </p>
 
 
-                   <h3>Latest Microtransactions:</h3>
+
+                   <h3>Latest Requests:</h3>
                     <table class="table table-bordered table-striped">
                         <thead>
                             <tr>
