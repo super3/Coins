@@ -1,179 +1,94 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/font-awesome.css">
-        <!--[if lt IE 9]>
-            <script src="js/html5-3.6-respond-1.1.0.min.js"></script>
-            <script language="javascript" type="text/javascript" src="js/excanvas.min.js"></script>
-        <![endif]-->
-    </head>
-    <body>
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container">
-                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                        <i class="icon icon-reorder"></i> Menu
-                    </a>
-                    <a class="brand" href="index.html">MilliB</a>
-                    <div class="nav-collapse collapse">
-                        <ul class="nav">
-                            <li class="active"><a href="#">Home</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                        </ul>
-                        <form class="navbar-form pull-right">
-                            <input type="text" class="span4"  placeholder="Bitcoin Address...">
-                            <button type="submit" class="btn"><i class="icon-search"></i> Check Balance</button>
-                        </form>
-                    </div><!--/.nav-collapse -->
-                   
-                </div>
-            </div>
-            <div class="sub-navbar">
-                <div class="container">
-                    <p><i class="icon icon-user"></i> Hello, Username. Thanks for loging in.</p>
-                </div>
-            </div>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--<link rel="shortcut icon" href="../../assets/ico/favicon.png">-->
+
+    <title>MilliB</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="jumbotron-narrow.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="index.html">Home</a></li>
+          <li><a href="withdraw.html">Withdraw</a></li>
+        </ul>
+        <h3 class="text-muted">MilliB</h3>
+      </div>
+  <div class="alert alert-danger" style="text-align:center;"><b>Please, wait 5 seconds per click.</b> We only fund humans, not super-clicking robot overlords.</div>
+      <div class="jumbotron" style="margin-bottom: 15px;">
+
+        <h1>Free Bitcoins!</h1>
+        <p class="lead">
+        Just getting started with Bitcoin, but not ready to deal with mining and exchanges? We give you a little Bitcoin to start you off. 
+        Welcome to the future of money!</p>
+        <p>
+          <a class="btn btn-lg btn-warning" href="#">Balance: 0.00000 mBTC </a>
+          <a class="btn btn-lg btn-success" href="#"><span class="glyphicon glyphicon-tint"></span> Gimme a Satoshi!</a>
+        </p>
+      </div>
+
+      <div class="row marketing" style="margin-top: 5px;">
+        <div class="col-lg-12">
+          <h4>Your Account</h4>
+          <p style="text-align:justify;">
+            This website is automated, and has no registration. When you visit the homepage a unique url for a temporary
+            account is generated. Your url is <code>http://millib.com/account/a8k1scc</code>. You should protect this URL
+            like a password, as anyone who has access to it may get Satoshis and withdraw them. If your temporary 
+            account has <b>not been used in 48 hours, the funds will be cleared.</b>
+          </p>
+          
         </div>
 
-        <div class="container wrapper">
-            <div class="row">
-                <div class="span3">
-                    <ul class="nav nav-tabs nav-stacked">
-                        <li><a href="index.html"><img src="assets/logo.png" alt="logo"/></a></li>
-                        <li class="active"  ><a href="index.html"><i class="icon icon-home"></i> Home</a></li> 
-                       
+        <div class="col-lg-6">
+          <h4>What is Bitcoin?</h4>
+          <p><a href="http://bitcoin.org/en/">Bitcoin</a> is open source P2P money.  Learn more about it at <a href="http://www.weusecoins.com/en/">We Use Coins</a>.</p>
 
-                        <li  ><a href="what.html"><i class="icon icon-info-sign"></i> What is Bitcoin?</a></li>
-                         <li><a href="index.html"><i class="icon icon-wrench"></i> Our API</a></li>     
-                        <li><a href="login.html"><i class="icon icon-lock"></i> Log In</a></li>                        
-                    </ul><!--/nav-stacked menu-->
-                    <ul class="nav nav-tabs nav-stacked">
-                        <li><a href="index.html"><img src="assets/logo.png" alt="logo"/></a></li>
-                        <li><a href="index.html">A <b>faucet</b> is a website that will give you free Bitcoin or other Digital Currencies to help get you started.</a></li>
-                        <li><a href="faucet.html"><span class="badge badge-success pull-right">Running</span><i class="icon icon-tint"></i> Bitcoin</a></li>
-                        <li><a href="http://trcfaucet.com"><span class="badge badge-success pull-right">Running</span><i class="icon icon-tint"></i> Terracoin</a></li>
-                        <!--<li><a href="#"><span class="badge badge-warning pull-right">Coming Soon</span><i class="icon icon-tint"></i> Elacoin</a></li>-->
-                    </ul><!--/nav-stacked menu-->
-                </div><!--/span3 column-->
+          <h4>Where can I get Bitcoin?</h4>
+          <p>You can earn them here, by <a href="https://www.weusecoins.com/en/mining-guide">mining</a>, or buying them from
+          <a href="https://coinbase.com/?r=5176d02a30016af12d000009&src=user-referral&utm_campaign=user-referral">Coinbase</a>.</p>
 
+          
+        </div>
 
-                <div class="span9 content">
-                      <div class="banner" style="text-align:center;">
-                        <h2>Bitcoin Microtransactions Made Possible.</h2>
-                        <p>Due to technical limitations the main Bitcoin client will no longer <a href="https://github.com/bitcoin/bitcoin/pull/2577">
-                           allow transactions under 0.0000543 BTC</a>. MilliB will temporary store your Bitcoins, and then send them to your wallet
-                           automatically once you reach a certain balance.
-                        </p>
-                        <div style="height: 40px;">
-                         <a class="btn btn-large btn-success pull-left" href="api.html">Check out Our API</a>
-                        <a class="btn btn-large pull-right" href="message.html">What is Bitcoin?</a>
-                         </div>  
-                    </div>
-                     <h3>Check your Balance or Get Free Bitcoin:</h3>
-                    <form  style="text-align:center;">
-                      <div class="input-append">
-                         <input type="text" class="span5  btn-large" placeholder="Bitcoin Address..." style="padding: 11px 19px;font-size: 17.5px;">
-                           <button type="submit" class="btn btn-large">
-                              <i class="icon-search"></i>
-                              Check Balance
-                          </button>
-                           <button type="submit" class="btn btn-large btn-warning">
-                              Free Bitcoin
-                          </button>
-                       </div>
-                    </form>
-                    <h3>About MilliB:</h3>
-                    <p>
-                    The MilliB service is currently available to Bitcoin related websites that require microtransations. These include faucets, microtasks, pay-to-click,
-                    and other websites. We are committed to providing a solution to these websites, so they are not affected by the microtransaction change. <b>Users
-                    are free to check their balance.</b> We will provide tools to facilitate microtransactions in the future for everyone. </p>
-                     <h3>MilliB API:</h3>
-                     <p>
-                        We want to make MilliB integration into your website as painless as possible. All you need is a simple one line GET request. <br/>
-                        </p>
-                       
-                      <pre>http://api.millib.com/v1/[secret api key]/send/[bitcoin address]/[amount]</pre>
-                       <p>
-                       This will send the specified amount to the Bitcoin address out of your MilliB wallet. You can read the <a href="#">full documentation here</a>.
-                     </p>
+        <div class="col-lg-6" >
+          <h4>Where can I store my Bitcoins?</h4>
+          <p>
+          <a href="https://coinbase.com/?r=5176d02a30016af12d000009&src=user-referral&utm_campaign=user-referral">Coinbase</a> offers a service
+          that will allow you to setup a wallet in a few seconds.</p>
+
+          <h4>What can I do with Bitcoins?</h4>
+          <p>The <a href="https://en.bitcoin.it/wiki/Trade">Bitcoin Wiki - Trade</a> lists 1,000s of services and goods you can purchase with Bitcoin.</p>
+
+        </div>
+      </div>
+
+      <div class="footer">
+        <p>&copy; <a href="http://super3.org">Super3</a> 2013</p>
+      </div>
+
+    </div> <!-- /container -->
 
 
-                   <h3>Latest Microtransactions:</h3>
-                    <table class="table table-bordered table-striped">
-                        <thead>
-                            <tr>
-                                
-                                <th>Time Since Transaction</th>
-                               
-                                
-                                <th>Address</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                
-                                <td><span class="label label-info">7 mins, 4 secs ago</span></td>
-                                
-                                
-                                <td>1KGjoMMe1WDNuB87DndH6FecGhvuB6qbD1</td>
-                                <td><a class="btn btn-small" href="#">View</a></td>
-                            </tr>
-                            <tr>
-                                
-                                <td><span class="label  label-info">15 mins, 2 secs ago</span></td>
-                                
-                                
-                                <td>178L7rfqKTTBhGB2M1EYF9KnwK4LH1enKL</td>
-                                <td><a class="btn btn-small" href="#">View</a></td>
-                            </tr>
-                            <tr>
-                                
-                                <td><span class="label label-info">22 mins, 12 secs ago</span></td>
-                                
-                                
-                                <td>1H5oy6Y2iykWzwCSdtJ7jh1u5zaJhaNUrp</td>
-                                <td><a class="btn btn-small" href="#">View</a></td>
-                            </tr>
-                            <tr>
-                                
-                                <td><span class="label  label-info">29 mins, 39 secs ago</span></td>
-                                
-                                
-                                <td>1MbYDCyV6UJvXZPDRWZBX6gxzyYpdhRcvj</td>
-                                <td><a class="btn btn-small" href="#">View</a></td>
-                            </tr>
-                            
-            
-                        </tbody>
-                    </table>
-                    
-                </div><!--/span9-->
-            </div><!--/row-->
-            
-            <hr>
-
-            <footer>
-                <p>&copy; Company 2013</p>
-            </footer>
-            
-        </div> <!-- /container wrapper -->
-
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/jquery-1.8.0.min.js"><\/script>')</script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/jquery.flot.js"></script>
-        <script src="js/jquery.flot.pie.js"></script>
-        <script src="js/jquery.flot.resize.js"></script>
-        <script src="js/jquery.flot.demo.js"></script>
-        <script src="js/animatedcollapse.js"></script>
-        <script src="js/script.js"></script>
-    </body>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  </body>
 </html>
