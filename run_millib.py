@@ -13,6 +13,16 @@ DEBUG = True
 # Database Functions -----------------------------------------------------------
 def connect_db():
 	return sqlite3.connect(app.config['DATABASE'])
+
+@app.before_request
+def before_request():
+	g.db = connect_db()
+
+@app.teardown_request
+def teardown_request(exception):
+	if hasattr(g, 'db'):
+		g.db.close()
+
 def init_db():
     with closing(connect_db()) as db:
         with app.open_resource('schema.sql', mode='r') as f:
