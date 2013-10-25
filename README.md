@@ -10,7 +10,7 @@ Only Coinbase withdrawals will be supported at first. The faucet will distribute
 ## Setup Script ##
 
 	apt-get upgrade && apt-get update
-	apt-get install git flask python3
+	apt-get install -y git python-flask python3 sqlite3
 	git clone https://github.com/super3/millib.git
 
 ## Database Setup ##
@@ -22,9 +22,11 @@ MilliB is run on Flask's flavor of [SQLite](http://flask.pocoo.org/docs/patterns
 	  acc_hash text not null,
 	  balance real not null,
 	  last_access text not null,
+	  ip_addr text null,
 	  withdraw_addr text null,
 	  withdraw_flag integer not null
 	);
+
 Most of the fields are self explanatory, but here are some additional information on the uses of some of the fields.
 
 - **acc_hash** - This is the database lookup key, and access key for a micro-account. With this hash the user has the ability to add and remove funds from the micro-account. This will generated at page load time, displayed to the user in plain-text, and be passed in GET on account actions. Normally this would be a problem, but accounts are assumed to contain negligible balances for short time periods. 
