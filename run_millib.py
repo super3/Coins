@@ -4,7 +4,7 @@ from flask import abort, render_template, flash, redirect, url_for
 from contextlib import closing
 
 # Flask Config -----------------------------------------------------------------
-DATABASE = 'millib.db'
+DATABASE = '~/millib.db'
 DEBUG = True
 
 # Load Flask -------------------------------------------------------------------
