@@ -13,7 +13,7 @@ getcontext().prec = 6
 # MicroAcc Class  --------------------------------------------------------------
 class MicroAcc:
 	"""A temporaty account to store a user's coins."""
-	def __init__(self, conn, acc_hash, debug=False): 
+	def __init__(self, conn, acc_hash, ip_addr = None, debug=False): 
 		if not debug:
 			# Grab db
 			self.conn = conn # mysqlite db stuff
@@ -61,7 +61,7 @@ class MicroAcc:
 		"""Create a database entry for the account hash."""
 		query = "INSERT INTO micro_acc (id, acc_hash, balance, last_access,"
 		query += "ip_addr, withdraw_addr, withdraw_flag) VALUES "
-		query += "(NULL, ?, 0, datetime('now','localtime'), NULL, NULL, 0)"
+		query += "(NULL, ?, 0.00000001, datetime('now','localtime'), NULL, NULL, 0)"
 
 		self.cursor.execute(query, (self.acc_hash,))
 		self.conn.commit()
@@ -69,15 +69,28 @@ class MicroAcc:
 		# now that the account is created we should be able to do a lookup
 		self.lookup_acc()
 
+	def lookup_ip(self):
+		"""Check for the lastest account from that IP."""
+
 
 	# Web Methods
-	def give(self):	
+	def give(self, ip_addr):	
 		"""Give the user a satoshi."""
-		self.balance += 0.00000001
-		query = "update micro_acc set balance=(balance + 0.00000001) where id=?"
-		self.cursor.execute(query, (self.acc_id,))
-		self.conn.commit()
-		return self
+
+		# make sure the user has not tried to update their balance in 
+		# the last 5 seconds
+		req_datetime = datetime.strptime(self.last_access, "%Y-%m-%d %H:%M:%S")
+		diff_time = int((datetime.now() - req_datetime).total_seconds())
+
+		if diff_time >= 5: # seconds
+			self.balance += 0.00000001
+			query = "update micro_acc set balance=(balance + 0.00000001),"
+			query += "last_access=datetime('now','localtime') where id=?"
+			self.cursor.execute(query, (self.acc_id,))
+			self.conn.commit()
+		else:
+			raise BufferError("User made give request in the last 5 seconds.")
+
 	def cashout(self):
 		"""Use Coinbase API to send user their funds."""
 		return self
@@ -116,7 +129,6 @@ class MicroAcc:
 		# Simple check of email function
 		assert(self.is_email("spam@super3.org"))
 		assert(not self.is_email("spamsuper3.org"))
-
 
 
 if __name__ == "__main__":
