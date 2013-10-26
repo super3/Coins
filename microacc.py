@@ -45,11 +45,14 @@ class MicroAcc:
 
 		# if the account is not found then raise an LookupError
 		if query_result == None:
+			print("Account not found")
 			raise LookupError("Account hash not found.")
 		# if the account is found then load db info into object
 		else:
-			self.acc_id = int(query_result[0])
+			self.acc_id = str(query_result[0])
 			self.balance = float(query_result[2])
+			print(self.acc_hash)
+			print(self.balance)
 			self.last_access = str(query_result[3])
 			self.ip_addr = str(query_result[4])
 			self.withdraw_addr = query_result[5]
@@ -73,12 +76,12 @@ class MicroAcc:
 		"""Give the user a satoshi."""
 		self.balance += 0.00000001
 		query = "update micro_acc set balance=(balance + 0.00000001) where id=?"
-		self.cursor.execute(query, (self.acc_hash,))
+		self.cursor.execute(query, (self.acc_id,))
 		self.conn.commit()
 		return self
 
 	def get_balance(self):
-		return str(Decimal(self.balance) * 1000)) # convert BTC to mBTC
+		return self.balance * 1000000 # convert BTC to mBTC
 	def get_acc_hash(self):
 		return self.acc_hash # for urls
 
