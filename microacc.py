@@ -75,6 +75,8 @@ class MicroAcc:
 
 	def get_balance(self):
 		return self.balance * 1000 # convert BTC to mBTC
+	def get_acc_hash(self):
+		return self.acc_hash # for urls
 
 
 	# Utility Methods
