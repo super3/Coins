@@ -51,7 +51,7 @@ class MicroAcc:
 			self.acc_id = str(query_result[0])
 			self.balance = float(query_result[2])
 			self.last_access = str(query_result[3])
-			print(last.access)
+			print(last_access)
 			self.ip_addr = str(query_result[4])
 			self.withdraw_addr = query_result[5]
 			self.withdraw_flag = bool(query_result[6])
@@ -82,7 +82,7 @@ class MicroAcc:
 		return self
 
 	def get_balance(self):
-		if self.balance = None:
+		if self.balance == None:
 			return 0
 		# else
 		return self.balance * 1000000 # convert BTC to uBTC
