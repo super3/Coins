@@ -36,9 +36,9 @@ def account():
 	acc = MicroAcc(connect_db(), acc_hash)
 	return render_template('index.html', acc_hash=acc.get_acc_hash(), balance=acc.get_balance())
 @app.route('/give/<acc_hash>')
-def account():
+def give():
 	acc = MicroAcc(connect_db(), acc_hash).give()
-	return render_template('index.html', acc_hash=acc.get_acc_hash())
+	return render_template('index.html', acc_hash=acc.get_acc_hash(), balance=acc.get_balance())
 
 if __name__ == '__main__':
 	app.run(host='0.0.0.0', debug=True)
