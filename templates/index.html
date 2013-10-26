@@ -1,7 +1,10 @@
 {% extends "layout.html" %}
 {% block body %}
 
-  <div class="alert alert-danger" style="text-align:center;"><b>Please, wait 5 seconds per click.</b> We only fund humans, not super-clicking robot overlords.</div>
+      {% if form_submit == "too_fast" %}
+      <div class="alert alert-danger" style="text-align:center;"><b>Please, wait 5 seconds per click.</b> We only fund humans, not super-clicking robot overlords.</div>
+      {% endif %}
+
       <div class="jumbotron" style="margin-bottom: 15px;">
 
         <h1>Free Bitcoins!</h1>
@@ -10,7 +13,7 @@
         Welcome to the future of money!</p>
         <p>
           <a class="btn btn-lg btn-warning" href="#">Balance: 0.00000 mBTC </a>
-          <a class="btn btn-lg btn-success" href="#"><span class="glyphicon glyphicon-tint"></span> Gimme a Satoshi!</a>
+          <a class="btn btn-lg btn-success" href="/give/{{acc_hash}}"><span class="glyphicon glyphicon-tint"></span> Gimme a Satoshi!</a>
         </p>
       </div>
 
