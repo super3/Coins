@@ -45,15 +45,13 @@ class MicroAcc:
 
 		# if the account is not found then raise an LookupError
 		if query_result == None:
-			print("Account not found")
 			raise LookupError("Account hash not found.")
 		# if the account is found then load db info into object
 		else:
 			self.acc_id = str(query_result[0])
 			self.balance = float(query_result[2])
-			print(self.acc_hash)
-			print(self.balance)
 			self.last_access = str(query_result[3])
+			print(last.access)
 			self.ip_addr = str(query_result[4])
 			self.withdraw_addr = query_result[5]
 			self.withdraw_flag = bool(query_result[6])
@@ -79,9 +77,15 @@ class MicroAcc:
 		self.cursor.execute(query, (self.acc_id,))
 		self.conn.commit()
 		return self
+	def cashout(self):
+		"""Use Coinbase API to send user their funds."""
+		return self
 
 	def get_balance(self):
-		return self.balance * 1000000 # convert BTC to mBTC
+		if self.balance = None:
+			return 0
+		# else
+		return self.balance * 1000000 # convert BTC to uBTC
 	def get_acc_hash(self):
 		return self.acc_hash # for urls
 

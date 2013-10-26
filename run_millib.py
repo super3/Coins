@@ -31,6 +31,7 @@ def teardown_request(exception):
 def index():
 	acc = MicroAcc(connect_db(), "NoHash")
 	return render_template('index.html', acc_hash=acc.get_acc_hash())
+
 @app.route('/account/<acc_hash>')
 def account(acc_hash):
 	acc = MicroAcc(connect_db(), acc_hash)
@@ -39,6 +40,16 @@ def account(acc_hash):
 def give(acc_hash):
 	acc = MicroAcc(connect_db(), acc_hash).give()
 	return render_template('index.html', acc_hash=acc.get_acc_hash(), balance=acc.get_balance())
+
+@app.route('/withdraw/<acc_hash>')
+def withdraw(acc_hash):
+	acc = MicroAcc(connect_db(), acc_hash)
+	return render_template('withdraw.html', acc_hash=acc.get_acc_hash(), balance=acc.get_balance())
+@app.route('/cashout/<acc_hash>')
+def cashout(acc_hash):
+	acc = MicroAcc(connect_db(), acc_hash).cashout()
+	return render_template('withdraw.html', acc_hash=acc.get_acc_hash(), balance=acc.get_balance())
+
 
 if __name__ == '__main__':
 	app.run(host='0.0.0.0', debug=True)
