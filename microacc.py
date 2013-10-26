@@ -2,6 +2,8 @@ import re
 import time
 import random
 import hashlib
+from decimal import *
+getcontext().prec = 6
 #from flask import Flask
 
 # Load Settings  ---------------------------------------------------------------
@@ -73,9 +75,10 @@ class MicroAcc:
 		query = "update micro_acc set balance=(balance + 0.00000001) where id=?"
 		self.cursor.execute(query, (self.acc_hash,))
 		self.conn.commit()
+		return self
 
 	def get_balance(self):
-		return self.balance * 1000 # convert BTC to mBTC
+		return str(Decimal(self.balance) * 1000)) # convert BTC to mBTC
 	def get_acc_hash(self):
 		return self.acc_hash # for urls
 
