@@ -32,11 +32,11 @@ def index():
 	acc = MicroAcc(connect_db(), "NoHash")
 	return render_template('index.html', acc_hash=acc.get_acc_hash())
 @app.route('/account/<acc_hash>')
-def account():
+def account(acc_hash):
 	acc = MicroAcc(connect_db(), acc_hash)
 	return render_template('index.html', acc_hash=acc.get_acc_hash(), balance=acc.get_balance())
 @app.route('/give/<acc_hash>')
-def give():
+def give(acc_hash):
 	acc = MicroAcc(connect_db(), acc_hash).give()
 	return render_template('index.html', acc_hash=acc.get_acc_hash(), balance=acc.get_balance())
 
