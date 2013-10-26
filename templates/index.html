@@ -12,7 +12,7 @@
         Just getting started with Bitcoin, but not ready to deal with mining and exchanges? We give you a little Bitcoin to start you off. 
         Welcome to the future of money!</p>
         <p>
-          <a class="btn btn-lg btn-warning" href="#">Balance: 0.00000 mBTC </a>
+          <a class="btn btn-lg btn-warning" href="#">Balance: {{balance}} mBTC </a>
           <a class="btn btn-lg btn-success" href="/give/{{acc_hash}}"><span class="glyphicon glyphicon-tint"></span> Gimme a Satoshi!</a>
         </p>
       </div>
@@ -22,7 +22,7 @@
           <h4>Your Account</h4>
           <p style="text-align:justify;">
             This website is automated, and has no registration. When you visit the homepage a unique url for a temporary
-            micro-account is generated. Your url is <code>http://millib.com/account/a8k1scc</code>. You should protect this URL
+            micro-account is generated. Your url is <code>http://millib.com/account/{{acc_hash}}</code>. You should protect this URL
             like a password, as anyone who has access to it may get Satoshis and withdraw them. If your temporary 
             account has <b>not been used in 48 hours, the funds will be cleared.</b>
           </p>

@@ -1,11 +1,11 @@
 import sqlite3
-from MicroAcc import MicroAcc
+from microacc import MicroAcc
 from contextlib import closing
 from flask import Flask, request, session, g
 from flask import abort, render_template, flash, redirect, url_for
 
 # Flask Config -----------------------------------------------------------------
-DATABASE = '~/millib.db'
+DATABASE = '/root/millib.db'
 DEBUG = True
 
 # Load Flask -------------------------------------------------------------------
@@ -31,6 +31,14 @@ def teardown_request(exception):
 def index():
 	acc = MicroAcc(connect_db(), "NoHash")
 	return render_template('index.html', acc_hash=acc.get_acc_hash())
+@app.route('/account/<acc_hash>')
+def account():
+	acc = MicroAcc(connect_db(), acc_hash)
+	return render_template('index.html', acc_hash=acc.get_acc_hash(), balance=acc.get_balance())
+@app.route('/give/<acc_hash>')
+def account():
+	acc = MicroAcc(connect_db(), acc_hash).give()
+	return render_template('index.html', acc_hash=acc.get_acc_hash())
 
 if __name__ == '__main__':
-	app.run(DEBUG=True, host='0.0.0.0')
+	app.run(host='0.0.0.0', debug=True)

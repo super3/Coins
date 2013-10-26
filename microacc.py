@@ -69,7 +69,8 @@ class MicroAcc:
 	# Web Methods
 	def give(self):	
 		"""Give the user a satoshi."""
-		query = "update micro_acc set balance=(balance - 0.00000001) where id=?"
+		self.balance += 0.00000001
+		query = "update micro_acc set balance=(balance + 0.00000001) where id=?"
 		self.cursor.execute(query, (self.acc_hash,))
 		self.conn.commit()
 
