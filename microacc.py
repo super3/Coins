@@ -13,26 +13,27 @@ getcontext().prec = 6
 # MicroAcc Class  --------------------------------------------------------------
 class MicroAcc:
 	"""A temporaty account to store a user's coins."""
-	def __init__(self, conn, acc_hash): 
-		# Grab db
-		self.conn = conn # mysqlite db stuff
-		self.cursor = self.conn.cursor()
+	def __init__(self, conn, acc_hash, debug=False): 
+		if not debug:
+			# Grab db
+			self.conn = conn # mysqlite db stuff
+			self.cursor = self.conn.cursor()
 
-		# Checking to make sure we have received a valid 10-char hash
-		if self.is_hash(acc_hash):
-			self.acc_hash = str(acc_hash).lower()
-		# If not then we just generate a new hash. Basically ignoring 
-		# the fail case of an incorrect hash, and moving on. Time will
-		# tell if this will cause problems in the future. 
-		else: 
-			self.acc_hash = self.gen_hash()
+			# Checking to make sure we have received a valid 10-char hash
+			if self.is_hash(acc_hash):
+				self.acc_hash = str(acc_hash).lower()
+			# If not then we just generate a new hash. Basically ignoring 
+			# the fail case of an incorrect hash, and moving on. Time will
+			# tell if this will cause problems in the future. 
+			else: 
+				self.acc_hash = self.gen_hash()
 
-		# Lookup account and load details, if account is not found then
-		# create a new accout with the given acccount hash
-		try:
-			self.lookup_acc()
-		except LookupError:
-			self.create_acc()
+			# Lookup account and load details, if account is not found then
+			# create a new accout with the given acccount hash
+			try:
+				self.lookup_acc()
+			except LookupError:
+				self.create_acc()
 
 
 	# Account Methods
@@ -94,7 +95,7 @@ class MicroAcc:
 		return str(hashlib.sha1(ran_num).hexdigest())[:10].lower()
 	def is_hash(self, a_hash):
 		"""Check to make sure an inputted string is a hash."""
-		return str(a_hash).issalnum() and len(a_hash) == 10
+		return str(a_hash).isalnum() and len(a_hash) == 10
 	def is_email(self, email):
 		"""Check if the email is valid."""
 		return re.match('[\.\w]{1,}[@]\w+[.]\w+', email)
@@ -119,4 +120,4 @@ class MicroAcc:
 
 
 if __name__ == "__main__":
-	MicroAcc(None, "Invalid Hash.").test_utilities()
+	MicroAcc(None, "Invalid Hash.", True).test_utilities()
