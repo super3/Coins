@@ -51,7 +51,7 @@ class MicroAcc:
 			self.acc_id = str(query_result[0])
 			self.balance = float(query_result[2])
 			self.last_access = str(query_result[3])
-			print(last_access)
+			print(self.last_access)
 			self.ip_addr = str(query_result[4])
 			self.withdraw_addr = query_result[5]
 			self.withdraw_flag = bool(query_result[6])
@@ -82,10 +82,7 @@ class MicroAcc:
 		return self
 
 	def get_balance(self):
-		if self.balance == None:
-			return 0
-		# else
-		return self.balance * 1000000 # convert BTC to uBTC
+		return str(self.balance * 1000000) # convert BTC to uBTC
 	def get_acc_hash(self):
 		return self.acc_hash # for urls
 
@@ -97,7 +94,7 @@ class MicroAcc:
 		return str(hashlib.sha1(ran_num).hexdigest())[:10].lower()
 	def is_hash(self, a_hash):
 		"""Check to make sure an inputted string is a hash."""
-		return str(a_hash).isalnum() and len(a_hash) == 10
+		return str(a_hash).issalnum() and len(a_hash) == 10
 	def is_email(self, email):
 		"""Check if the email is valid."""
 		return re.match('[\.\w]{1,}[@]\w+[.]\w+', email)

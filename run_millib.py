@@ -30,7 +30,7 @@ def teardown_request(exception):
 @app.route('/')
 def index():
 	acc = MicroAcc(connect_db(), "NoHash")
-	return render_template('index.html', acc_hash=acc.get_acc_hash())
+	return render_template('index.html', acc_hash=acc.get_acc_hash(), balance=acc.get_balance())
 
 @app.route('/account/<acc_hash>')
 def account(acc_hash):
